@@ -40,6 +40,16 @@ public class CoffeeService {
 		return drinks.get(name);
 	}
 
+	/**
+	 * Makes a drink with name, cost, and ingredient units. Adds drink to the menu and drinks map.
+	 *
+	 * @param name the name of the drink
+	 * @param cost the cost of the drink
+	 * @param coffee amount of coffee units
+	 * @param sugar amount of sugar units
+	 * @param cream amount of cream units
+	 *
+	 * */
 	public void addDrink(String name, double cost, int coffee, int sugar, int cream) {
 		Drink newDrink = new Drink();
 		newDrink.setName(name);

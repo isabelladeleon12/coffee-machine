@@ -7,6 +7,7 @@ public class MachineInventory implements Inventory {
 
     HashMap<String, Integer> currInventory = new HashMap<>();
     public MachineInventory() {
+        //Default starting units for each ingredient.
         currInventory.put("coffee", 10);
         currInventory.put("sugar", 10);
         currInventory.put("cream", 10);
@@ -20,6 +21,7 @@ public class MachineInventory implements Inventory {
 
     @Override
     public void deduct(String name, Integer amount) {
+        //Units cannot fall below 0
         if (currInventory.get(name) - amount < 0) {
             System.out.println("Not enough " + name + "!");
         }
