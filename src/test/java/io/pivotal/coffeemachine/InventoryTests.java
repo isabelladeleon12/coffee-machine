@@ -31,4 +31,5 @@ public abstract class InventoryTests {
 		assertThat(ingredients).contains(entry("coffee", 8));
 	}
 
+
 }

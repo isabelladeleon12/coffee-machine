@@ -41,4 +41,21 @@ public class CoffeeServiceTests {
 		verify(this.inventory).deduct("cream", 1);
 	}
 
+	@Test
+	public void addedDrinkShouldShowInMenu() {
+		Map<String, Double> menu = this.machine.getMenu();
+		this.machine.addDrink("light coffee", 3.50, 2, 2, 2);
+		assertThat(menu).contains(entry("light coffee", 3.50));
+	}
+
+	@Test
+	public void makeNewDrink() {
+		Map<String, Double> menu = this.machine.getMenu();
+		this.machine.addDrink("light coffee", 3.50, 2, 2, 2);
+		this.machine.makeDrink("light coffee");
+		verify(this.inventory).deduct("coffee", 2);
+		verify(this.inventory).deduct("sugar", 2);
+		verify(this.inventory).deduct("cream", 2);
+	}
+
 }
