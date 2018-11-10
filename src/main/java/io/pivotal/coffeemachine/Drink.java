@@ -8,7 +8,6 @@ public class Drink {
 	 * Name of the drink.
 	 */
 	private String name;
-
 	/**
 	 * Cost for the drink.
 	 */
@@ -20,6 +19,7 @@ public class Drink {
 	private Map<String, Integer> ingredients;
 
 	public String getName() {
+
 		return this.name;
 	}
 
